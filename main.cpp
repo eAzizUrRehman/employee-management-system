@@ -50,6 +50,7 @@ public:
 	}
 	void setRecord()
 	{
+		int localChoice;
 		cout << "Enter Name: ";
 		cin >> name;
 		cout << "Enter Father Name: ";
@@ -58,11 +59,35 @@ public:
 		cin >> dob;
 		age = calculateAge(dob);
 		cout << "Enter Job Type: ";
-		cin >> jobType;
+		cin >> localChoice;
+
+while(localChoice<1 || localChoice>3)
+		{
+			cout<<"Please select valid option from 1 to 3 only, Enter again: ";
+			cin>>localChoice;
+		}
+switch (localChoice)
+{
+case 1:
+	jobType="Private";
+	break;
+case 2:
+	jobType="Public";
+	break;
+case 3:
+	jobType="Autonomous";
+	 
+}
+
 		cout << "Enter Employee ID: ";
 		cin >> empId;
 		cout << "Enter BPS: ";
 		cin >> bps;
+		while(bps>1 || bps<22)
+		{
+			cout<<"BPS can be from 1 to 22 only, Enter again: ";
+			cin>>bps;
+		}
 	}
 	void showRecord()
 	{
@@ -100,6 +125,8 @@ public:
 		Employee::setRecord();
 		cout << "Enter Education: ";
 		cin >> education;
+
+		// e Bachelor, Masters, PhD.
 		cout << "Enter Teaching Level: ";
 		cin >> teachingLevel;
 		cout << "Enter Subject: ";
@@ -209,7 +236,7 @@ public:
 		newNode->next = doctorFirstNode;
 		doctorFirstNode = newNode;
 	}
-	void searchEmployeeByID()
+	void searchEmployeeById()
 	{
 		int id;
 		cout << "Enter the ID of the Employee you want to search: ";
@@ -406,7 +433,7 @@ public:
 		}
 		cout << "No teacher found with the provided teaching level " << teachingLevel << "." << endl;
 	}
-	void deleteEmployeeByID()
+	void deleteEmployeeById()
 	{
 		int id;
 		cout << "Enter the ID of the Employee you want to delete: ";
@@ -508,13 +535,15 @@ public:
 
 int main()
 {
-	Teacher t1;
-	t1.setRecord();
-	t1.showRecord();
-	t1.updateRecord();
-	t1.showRecord();
+	EmployeeList employeeList;
+	// Teacher t1;
+	// t1.setRecord();
+	// t1.showRecord();
+	// t1.updateRecord();
+	// t1.showRecord();
 
-	cout << "\nMenu: "
+	int choice;
+	cout << "\nMenu: "<<endl
 		 << "\t1. Add Employee" << endl
 		 << "\t2. Update Employee Record" << endl
 		 << "\t3. Search Employee" << endl
@@ -531,7 +560,7 @@ int main()
 	{
 	case 1:
 	{
-		cout << "Enter the type of employee you want to add: " << endl
+		cout << "\nEnter the type of employee you want to add: " << endl
 			 << "\t1. Doctor" << endl
 			 << "\t2. Teacher" << endl
 			 << "Enter here: ";
@@ -555,7 +584,7 @@ int main()
 	break;
 	case 2:
 	{
-		cout << "Enter the type of employee you want to add: " << endl
+		cout << "\nWhat type of employee you want to add: " << endl
 			 << "\t1. Doctor" << endl
 			 << "\t2. Teacher" << endl
 			 << "Enter here: ";
@@ -580,7 +609,7 @@ int main()
 	case 3:
 	{
 
-		cout << "\n Search Employee Menu: "
+		cout << "\nSearch Employee Menu: "<< endl
 			 << "\t1. Search Employee By ID" << endl
 			 << "\t2. Search Employee By Name" << endl
 			 << "\t3. Search Youngest Employee" << endl
@@ -597,32 +626,32 @@ int main()
 			cin >> localChoice;
 		}
 
-		switch (localChoice)
+				switch (localChoice)
 		{
 		case 1:
-			searchEmployeeByID();
+			employeeList.searchEmployeeById();
 			break;
 		case 2:
-			searchEmployeeByName();
+			employeeList.searchEmployeeByName();
 			break;
 		case 3:
-			searchYoungestEmployee();
+			employeeList.searchYoungestEmployee();
 			break;
 		case 4:
-			searchEldestEmployee();
+			employeeList.searchEldestEmployee();
 			break;
 		case 5:
-			searchDoctorBySpecialization();
+			employeeList.searchDoctorBySpecialization();
 			break;
 		case 6:
-			searchTeacherByTeachingLevel();
+			employeeList.searchTeacherByTeachingLevel();
 			break;
 		case 0:
 			break;
 		}
 	case 4:
 	{
-		cout << "\n Search Employee Menu: "
+		cout << "\nDelete Employee Menu: "<< endl
 			 << "\t1. Delete Employee By ID" << endl
 			 << "\t2. Delete Employee By Name" << endl
 			 << "\t0. Exit" << endl
@@ -638,15 +667,17 @@ int main()
 		switch (localChoice)
 		{
 		case 1:
-			deleteEmployeeByID();
+			employeeList.deleteEmployeeById();
 			break;
 		case 2:
-			deleteEmployeeByName();
+			employeeList.deleteEmployeeByName();
 			break;
 		case 0:
 			break;
 		}
 	}
 	}
+	}
+	cout<<"The end";
 		return 0;
 	}
