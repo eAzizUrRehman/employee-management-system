@@ -51,42 +51,45 @@ public:
 	void setRecord()
 	{
 		int localChoice;
-		cout << "Enter Name: ";
+		cout << "\nEnter Name: ";
 		cin >> name;
 		cout << "Enter Father Name: ";
 		cin >> fatherName;
 		cout << "Enter Date of Birth (DDMMYYYY): ";
 		cin >> dob;
 		age = calculateAge(dob);
-		cout << "Enter Job Type: ";
+		cout << "What is the Job Type?" << endl
+			 << "\t1. Private" << endl
+			 << "\t2. Public" << endl
+			 << "\t3. Autonomous" << endl
+			 << "Enter here: ";
 		cin >> localChoice;
 
-while(localChoice<1 || localChoice>3)
+		while (localChoice < 1 || localChoice > 3)
 		{
-			cout<<"Please select valid option from 1 to 3 only, Enter again: ";
-			cin>>localChoice;
+			cout << "Please select valid option from 1 to 3 only, Enter again: ";
+			cin >> localChoice;
 		}
-switch (localChoice)
-{
-case 1:
-	jobType="Private";
-	break;
-case 2:
-	jobType="Public";
-	break;
-case 3:
-	jobType="Autonomous";
-	 
-}
+		switch (localChoice)
+		{
+		case 1:
+			jobType = "Private";
+			break;
+		case 2:
+			jobType = "Public";
+			break;
+		case 3:
+			jobType = "Autonomous";
+		}
 
 		cout << "Enter Employee ID: ";
 		cin >> empId;
 		cout << "Enter BPS: ";
 		cin >> bps;
-		while(bps>1 || bps<22)
+		while (bps < 1 || bps > 22)
 		{
-			cout<<"BPS can be from 1 to 22 only, Enter again: ";
-			cin>>bps;
+			cout << "BPS can be from 1 to 22 only, Enter again: ";
+			cin >> bps;
 		}
 	}
 	void showRecord()
@@ -122,16 +125,89 @@ public:
 	}
 	void setRecord()
 	{
-		Employee::setRecord();
-		cout << "Enter Education: ";
-		cin >> education;
+		int localChoice;
 
-		// e Bachelor, Masters, PhD.
-		cout << "Enter Teaching Level: ";
-		cin >> teachingLevel;
-		cout << "Enter Subject: ";
-		cin >> subject;
+		Employee::setRecord();
+		cout << "What is the Education?" << endl
+			 << "\t1. Bachelor" << endl
+			 << "\t2. Masters" << endl
+			 << "\t3. PhD" << endl
+			 << "Enter here: ";
+
+		cin >> localChoice;
+		while (localChoice < 1 || localChoice > 3)
+		{
+			cout << "Please select valid option from 1 to 3 only, Enter again: ";
+			cin >> localChoice;
+		}
+		switch (localChoice)
+		{
+		case 1:
+			education = "Bachelor";
+			break;
+		case 2:
+			education = "Masters";
+			break;
+		case 3:
+			education = "PhD";
+		}
+
+		cout << "What is the Teaching Level?" << endl
+			 << "\t1. School" << endl
+			 << "\t2. College" << endl
+			 << "\t3. University" << endl
+			 << "Enter here: ";
+		cin >> localChoice;
+
+		while (localChoice < 1 || localChoice > 3)
+		{
+			cout << "Please select valid option from 1 to 3 only, Enter again: ";
+			cin >> localChoice;
+		}
+		switch (localChoice)
+		{
+		case 1:
+			teachingLevel = "School";
+			break;
+		case 2:
+
+			teachingLevel = "College";
+			break;
+		case 3:
+			teachingLevel = "University";
+		}
+
+		cout << "What is the Subject?" << endl
+			 << "\t1. Physics" << endl
+			 << "\t2. Chemistry" << endl
+			 << "\t3. Maths" << endl
+			 << "\t4. CS" << endl
+			 << "Enter here: ";
+		cin >> localChoice;
+
+		while (localChoice < 1 || localChoice > 4)
+		{
+			cout << "Please select valid option from 1 to 4 only, Enter again: ";
+			cin >> localChoice;
+		}
+		switch (localChoice)
+		{
+		case 1:
+			subject = "Physics";
+			break;
+		case 2:
+
+			subject = "Chemistry";
+			break;
+		case 3:
+			subject = "Maths";
+			break;
+		case 4:
+			subject = "CS";
+		}
+		cout << "\n***Successfully added " << name << "'s record.***" << endl;
 	}
+
 	void showRecord()
 	{
 		Employee::showRecord();
@@ -141,14 +217,86 @@ public:
 	}
 	void updateRecord()
 	{
-		cout << "Enter the updated Job Type: ";
-		cin >> jobType;
+		int localChoice;
+		cout << "What is the updated Job Type?" << endl
+			 << "\t1. Private" << endl
+			 << "\t2. Public" << endl
+			 << "\t3. Autonomous" << endl
+			 << "Enter here: ";
+		cin >> localChoice;
+
+		while (localChoice < 1 || localChoice > 3)
+		{
+			cout << "Please select valid option from 1 to 3 only, Enter again: ";
+			cin >> localChoice;
+		}
+		switch (localChoice)
+		{
+		case 1:
+			jobType = "Private";
+			break;
+		case 2:
+			jobType = "Public";
+			break;
+		case 3:
+			jobType = "Autonomous";
+		}
+
 		cout << "Enter the updated BPS: ";
 		cin >> bps;
-		cout << "Enter the updated Education: ";
-		cin >> education;
-		cout << "Enter the updated Teaching Level: ";
-		cin >> teachingLevel;
+		while (bps < 1 || bps > 22)
+		{
+			cout << "BPS can be from 1 to 22 only, Enter again: ";
+			cin >> bps;
+		}
+
+		cout << "What is the updated Education?" << endl
+			 << "\t1. Bachelor" << endl
+			 << "\t2. Masters" << endl
+			 << "\t3. PhD" << endl
+			 << "Enter here: ";
+
+		cin >> localChoice;
+		while (localChoice < 1 || localChoice > 3)
+		{
+			cout << "Please select valid option from 1 to 3 only, Enter again: ";
+			cin >> localChoice;
+		}
+		switch (localChoice)
+		{
+		case 1:
+			education = "Bachelor";
+			break;
+		case 2:
+			education = "Masters";
+			break;
+		case 3:
+			education = "PhD";
+		}
+		cout << "What is the updated Teaching Level?" << endl
+			 << "\t1. School" << endl
+			 << "\t2. College" << endl
+			 << "\t3. University" << endl
+			 << "Enter here: ";
+		cin >> localChoice;
+
+		while (localChoice < 1 || localChoice > 3)
+		{
+			cout << "Please select valid option from 1 to 3 only, Enter again: ";
+			cin >> localChoice;
+		}
+		switch (localChoice)
+		{
+		case 1:
+			teachingLevel = "School";
+			break;
+		case 2:
+
+			teachingLevel = "College";
+			break;
+		case 3:
+			teachingLevel = "University";
+		}
 	}
 };
 
@@ -173,13 +321,87 @@ public:
 	}
 	void setRecord()
 	{
+		int localChoice;
 		Employee::setRecord();
-		cout << "Enter Doctor Type: ";
-		cin >> doctorType;
-		cout << "Enter Specialization: ";
-		cin >> specialization;
-		cout << "Enter Job Level: ";
-		cin >> jobLevel;
+		cout << "What is the Doctor Type?" << endl
+			 << "\t1. MBBS" << endl
+			 << "\t2. BDS" << endl
+			 << "\t3. Vetnery" << endl
+			 << "Enter here: ";
+		cin >> localChoice;
+
+		while (localChoice < 1 || localChoice > 3)
+		{
+			cout << "Please select valid option from 1 to 3 only, Enter again: ";
+			cin >> localChoice;
+		}
+		switch (localChoice)
+		{
+		case 1:
+			doctorType = "MBBS";
+			break;
+		case 2:
+
+			doctorType = "BDS";
+			break;
+		case 3:
+			doctorType = "Vetnery";
+		}
+
+		cout << "What is the Specialization?" << endl
+			 << "\t1. ENT" << endl
+			 << "\t2. Heart" << endl
+			 << "\t3. Stomach" << endl
+			 << "\t4. Gyne" << endl
+			 << "Enter here: ";
+		cin >> localChoice;
+
+		while (localChoice < 1 || localChoice > 4)
+		{
+			cout << "Please select valid option from 1 to 4 only, Enter again: ";
+			cin >> localChoice;
+		}
+		switch (localChoice)
+		{
+		case 1:
+			specialization = "ENT";
+			break;
+		case 2:
+
+			specialization = "Heart";
+			break;
+		case 3:
+			specialization = "Stomach";
+			break;
+		case 4:
+			specialization = "Gyne";
+		}
+
+		cout << "What is the Job Level?" << endl
+			 << "\t1. House Job" << endl
+			 << "\t2. Medical Officer" << endl
+			 << "\t3. Senior Medical Officer" << endl
+			 << "Enter here: ";
+		cin >> localChoice;
+
+		while (localChoice < 1 || localChoice > 3)
+		{
+			cout << "Please select valid option from 1 to 3 only, Enter again: ";
+			cin >> localChoice;
+		}
+		switch (localChoice)
+		{
+		case 1:
+			jobLevel = "House Job";
+			break;
+		case 2:
+
+			jobLevel = "Medical Officer";
+			break;
+		case 3:
+			jobLevel = "Senior Medical Officer";
+		}
+		cout << "\nSuccessfully added doctor record." << endl;
 	}
 	void showRecord()
 	{
@@ -190,12 +412,62 @@ public:
 	}
 	void updateRecord()
 	{
-		cout << "Enter the updated Job Type: ";
-		cin >> jobType;
+		int localChoice;
+		cout << "What is the updated Job Type?" << endl
+			 << "\t1. Private" << endl
+			 << "\t2. Public" << endl
+			 << "\t3. Autonomous" << endl
+			 << "Enter here: ";
+		cin >> localChoice;
+
+		while (localChoice < 1 || localChoice > 3)
+		{
+			cout << "Please select valid option from 1 to 3 only, Enter again: ";
+			cin >> localChoice;
+		}
+		switch (localChoice)
+		{
+		case 1:
+			jobType = "Private";
+			break;
+		case 2:
+			jobType = "Public";
+			break;
+		case 3:
+			jobType = "Autonomous";
+		}
+
 		cout << "Enter the updated BPS: ";
 		cin >> bps;
-		cout << "Enter the updated Job Level: ";
-		cin >> jobLevel;
+		while (bps < 1 || bps > 22)
+		{
+			cout << "BPS can be from 1 to 22 only, Enter again: ";
+			cin >> bps;
+		}
+		cout << "What is the updated Job Level?" << endl
+			 << "\t1. House Job" << endl
+			 << "\t2. Medical Officer" << endl
+			 << "\t3. Senior Medical Officer" << endl
+			 << "Enter here: ";
+		cin >> localChoice;
+
+		while (localChoice < 1 || localChoice > 3)
+		{
+			cout << "Please select valid option from 1 to 3 only, Enter again: ";
+			cin >> localChoice;
+		}
+		switch (localChoice)
+		{
+		case 1:
+			jobLevel = "House Job";
+			break;
+		case 2:
+
+			jobLevel = "Medical Officer";
+			break;
+		case 3:
+			jobLevel = "Senior Medical Officer";
+		}
 	}
 };
 class TeacherNode
@@ -453,7 +725,7 @@ public:
 					prev1->next = temp1->next;
 				}
 				delete temp1;
-				cout << "Employee with ID " << id << " deleted successfully." << endl;
+				cout << "Employee with ID " << id << " deleted \nsuccessfully." << endl;
 				return;
 			}
 			prev1 = temp1;
@@ -474,7 +746,7 @@ public:
 					prev2->next = temp2->next;
 				}
 				delete temp2;
-				cout << "Employee with ID " << id << " deleted successfully." << endl;
+				cout << "Employee with ID " << id << " deleted \nsuccessfully." << endl;
 				return;
 			}
 			prev2 = temp2;
@@ -502,7 +774,7 @@ public:
 					prev1->next = temp1->next;
 				}
 				delete temp1;
-				cout << "Employee with name " << name << " deleted successfully." << endl;
+				cout << "Employee with name " << name << " deleted \nsuccessfully." << endl;
 				return;
 			}
 			prev1 = temp1;
@@ -523,7 +795,7 @@ public:
 					prev2->next = temp2->next;
 				}
 				delete temp2;
-				cout << "Employee with name " << name << " deleted successfully." << endl;
+				cout << "Employee with name " << name << " deleted \nsuccessfully." << endl;
 				return;
 			}
 			prev2 = temp2;
@@ -535,149 +807,168 @@ public:
 
 int main()
 {
+	int choice, localChoice;
 	EmployeeList employeeList;
-	// Teacher t1;
-	// t1.setRecord();
-	// t1.showRecord();
-	// t1.updateRecord();
-	// t1.showRecord();
 
-	int choice;
-	cout << "\nMenu: "<<endl
-		 << "\t1. Add Employee" << endl
-		 << "\t2. Update Employee Record" << endl
-		 << "\t3. Search Employee" << endl
-		 << "\t4. Delete Employee" << endl
-		 << "\t5. Exit" << endl
-
-		 << "Enter here: ";
-
-	cin >> choice;
-
-	int localChoice;
-
-	switch (choice)
+	do
 	{
-	case 1:
-	{
-		cout << "\nEnter the type of employee you want to add: " << endl
-			 << "\t1. Doctor" << endl
-			 << "\t2. Teacher" << endl
-			 << "Enter here: ";
-		cin >> localChoice;
-		while (localChoice != 1 && localChoice != 2)
-		{
-			cout << "Invalid choice, Enter again: ";
-			cin >> localChoice;
-		}
-		if (localChoice == 1)
-		{
-			Doctor d;
-			d.setRecord();
-		}
-		else
-		{
-			Teacher t;
-			t.setRecord();
-		}
-	}
-	break;
-	case 2:
-	{
-		cout << "\nWhat type of employee you want to add: " << endl
-			 << "\t1. Doctor" << endl
-			 << "\t2. Teacher" << endl
-			 << "Enter here: ";
-		cin >> localChoice;
-		while (localChoice != 1 && localChoice != 2)
-		{
-			cout << "Invalid choice, Enter again: ";
-			cin >> localChoice;
-		}
-		if (localChoice == 1)
-		{
-			Doctor d;
-			d.updateRecord();
-		}
-		else
-		{
-			Teacher t;
-			t.updateRecord();
-		}
-	}
-	break;
-	case 3:
-	{
-
-		cout << "\nSearch Employee Menu: "<< endl
-			 << "\t1. Search Employee By ID" << endl
-			 << "\t2. Search Employee By Name" << endl
-			 << "\t3. Search Youngest Employee" << endl
-			 << "\t4. Search Eldest Employee" << endl
-			 << "\t5. Search Doctor By Specialization" << endl
-			 << "\t6. Search Teacher By TeachingLevel" << endl
-			 << "\t0. Exit" << endl
+		cout << "\nMenu: " << endl
+			 << "\t1. Add Employee" << endl
+			 << "\t2. Update Employee Record" << endl
+			 << "\t3. Search Employee" << endl
+			 << "\t4. Delete Employee" << endl
+			 << "\t0. Exit the program" << endl
 			 << "Enter here: ";
 
-		cin >> localChoice;
-		while (localChoice < 0 || localChoice > 6)
+		cin >> choice;
+		while (choice < 0 || choice > 4)
 		{
 			cout << "Invalid choice, Enter again: ";
-			cin >> localChoice;
+			cin >> choice;
 		}
 
-				switch (localChoice)
+		switch (choice)
 		{
+		case 0:
+		{
+			break;
+		}
 		case 1:
-			employeeList.searchEmployeeById();
+		{
+			cout << "\nWhich type of employee you want to add?" << endl
+				 << "\t1. Doctor" << endl
+				 << "\t2. Teacher" << endl
+				 << "Enter here: ";
+			cin >> localChoice;
+			while (localChoice != 1 && localChoice != 2)
+			{
+				cout << "Invalid choice, Enter again: ";
+				cin >> localChoice;
+			}
+			if (localChoice == 1)
+			{
+				Doctor d;
+				d.setRecord();
+			}
+			else
+			{
+				Teacher t;
+				t.setRecord();
+			}
 			break;
+		}
 		case 2:
-			employeeList.searchEmployeeByName();
+		{
+			cout << "What type of employee you want to add: " << endl
+				 << "\t1. Doctor" << endl
+				 << "\t2. Teacher" << endl
+				 << "Enter here: ";
+			cin >> localChoice;
+			while (localChoice != 1 && localChoice != 2)
+			{
+				cout << "Invalid choice, Enter again: ";
+				cin >> localChoice;
+			}
+			if (localChoice == 1)
+			{
+				Doctor d;
+				d.updateRecord();
+			}
+			else
+			{
+				Teacher t;
+				t.updateRecord();
+			}
 			break;
+		}
 		case 3:
-			employeeList.searchYoungestEmployee();
-			break;
-		case 4:
-			employeeList.searchEldestEmployee();
-			break;
-		case 5:
-			employeeList.searchDoctorBySpecialization();
-			break;
-		case 6:
-			employeeList.searchTeacherByTeachingLevel();
-			break;
-		case 0:
-			break;
-		}
-	case 4:
-	{
-		cout << "\nDelete Employee Menu: "<< endl
-			 << "\t1. Delete Employee By ID" << endl
-			 << "\t2. Delete Employee By Name" << endl
-			 << "\t0. Exit" << endl
-			 << "Enter here: ";
-
-		cin >> localChoice;
-		while (localChoice < 0 || localChoice > 2)
 		{
-			cout << "Invalid choice, Enter again: ";
+
+			cout << "\nSearch Employee Menu: " << endl
+				 << "\t1. Search Employee By ID" << endl
+				 << "\t2. Search Employee By Name" << endl
+				 << "\t3. Search Youngest Employee" << endl
+				 << "\t4. Search Eldest Employee" << endl
+				 << "\t5. Search Doctor By Specialization" << endl
+				 << "\t6. Search Teacher By TeachingLevel" << endl
+				 << "\t0. Exit" << endl
+				 << "Enter here: ";
+
 			cin >> localChoice;
+			while (localChoice < 0 || localChoice > 6)
+			{
+				cout << "Invalid choice, Enter again: ";
+				cin >> localChoice;
+			}
+
+			switch (localChoice)
+			{
+			case 1:
+				employeeList.searchEmployeeById();
+				break;
+			case 2:
+				employeeList.searchEmployeeByName();
+				break;
+			case 3:
+				employeeList.searchYoungestEmployee();
+				break;
+			case 4:
+				employeeList.searchEldestEmployee();
+				break;
+			case 5:
+				employeeList.searchDoctorBySpecialization();
+				break;
+			case 6:
+				employeeList.searchTeacherByTeachingLevel();
+				break;
+			case 0:
+				break;
+			}
 		}
 
-		switch (localChoice)
+		case 4:
 		{
-		case 1:
-			employeeList.deleteEmployeeById();
-			break;
-		case 2:
-			employeeList.deleteEmployeeByName();
-			break;
-		case 0:
-			break;
+			cout << "\nDelete Employee Menu: " << endl
+				 << "\t1. Delete Employee By ID" << endl
+				 << "\t2. Delete Employee By Name" << endl
+				 << "\t0. Exit" << endl
+				 << "Enter here: ";
+
+			cin >> localChoice;
+			while (localChoice < 0 || localChoice > 2)
+			{
+				cout << "Invalid choice, Enter again: ";
+				cin >> localChoice;
+			}
+
+			switch (localChoice)
+			{
+			case 1:
+				employeeList.deleteEmployeeById();
+				break;
+			case 2:
+				employeeList.deleteEmployeeByName();
+				break;
+			case 0:
+				break;
+			}
 		}
-	}
-	}
-	}
-	cout<<"The end";
-		return 0;
-	}
+		}
+
+		if (choice != 0)
+		{
+			cout << "\nEnter 9 to show 'Teams Menu' again or 0 to terminate the "
+					"program: ";
+			cin >> choice;
+			while (choice != 0 && choice != 9)
+			{
+				cout << "Invalid input. Enter again: ";
+				cin >> choice;
+			}
+		}
+
+	} while (choice != 0);
+
+	cout << "\n***Thank You For Using This Program.***" << endl;
+	return 0;
+}
