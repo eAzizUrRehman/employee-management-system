@@ -15,7 +15,6 @@ public:
 
     void setRecord();
     void showRecord();
-    
 };
 
 #endif

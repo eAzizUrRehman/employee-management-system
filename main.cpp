@@ -4,14 +4,12 @@
 #include "./employeeList/teacher/teacher.h"
 #include "./employeeList/teacher/teacherNode/teacherNode.h"
 #include "./employeeList/employeeList.h"
-
 #include <iostream>
 #include <ctime>
 #include <sstream>
 #include <string>
 #include <iomanip>
 using namespace std;
-
 
 int main()
 {
@@ -25,11 +23,12 @@ int main()
 			 << "\t2. Update Employee Record" << endl
 			 << "\t3. Search Employee" << endl
 			 << "\t4. Delete Employee" << endl
+			 << "\t5. Show Employees" << endl
 			 << "\t0. Exit the program" << endl
 			 << "Enter here: ";
 
 		cin >> choice;
-		while (choice < 0 || choice > 4)
+		while (choice < 0 || choice > 5)
 		{
 			cout << "Invalid choice, Enter again: ";
 			cin >> choice;
@@ -54,19 +53,21 @@ int main()
 			}
 			if (localChoice == 1)
 			{
-				Doctor d;
-				employeeList.addDoctor(d);
+				Doctor tempDoctor;
+				tempDoctor.setRecord();
+				employeeList.addDoctor(tempDoctor);
 			}
 			else
 			{
-				Teacher t;
-				t.setRecord();
+				Teacher tempTeacher;
+				tempTeacher.setRecord();
+				employeeList.addTeacher(tempTeacher);
 			}
 			break;
 		}
 		case 2:
 		{
-			cout << "What type of employee you want to add: " << endl
+			cout << "What type of employee's record you want to update?" << endl
 				 << "\t1. Doctor" << endl
 				 << "\t2. Teacher" << endl
 				 << "Enter here: ";
@@ -78,26 +79,25 @@ int main()
 			}
 			if (localChoice == 1)
 			{
-				Doctor d;
-				d.updateRecord();
+				Doctor tempDoctor;
+				tempDoctor.updateRecord();
 			}
 			else
 			{
-				Teacher t;
-				t.updateRecord();
+				Teacher tempTeacher;
+				tempTeacher.updateRecord();
 			}
 			break;
 		}
 		case 3:
 		{
-
 			cout << "\nSearch Employee Menu: " << endl
 				 << "\t1. Search Employee By ID" << endl
 				 << "\t2. Search Employee By Name" << endl
 				 << "\t3. Search Youngest Employee" << endl
 				 << "\t4. Search Eldest Employee" << endl
 				 << "\t5. Search Doctor By Specialization" << endl
-				 << "\t6. Search Teacher By TeachingLevel" << endl
+				 << "\t6. Search Teacher By Teaching Level" << endl
 				 << "\t0. Exit" << endl
 				 << "Enter here: ";
 
@@ -160,12 +160,17 @@ int main()
 			case 0:
 				break;
 			}
+			break;
+		}
+		case 5:
+		{
+			employeeList.showEmployees();
+			break;
 		}
 		}
-
 		if (choice != 0)
 		{
-			cout << "\nEnter 9 to show 'Teams Menu' again or 0 to terminate the "
+			cout << "\nEnter 9 to show Menu again or 0 to terminate the "
 					"program: ";
 			cin >> choice;
 			while (choice != 0 && choice != 9)

@@ -5,7 +5,8 @@
 #include <string>
 using namespace std;
 
-class Teacher : public Employee {
+class Teacher : public Employee
+{
 public:
   string education, teachingLevel, subject;
 

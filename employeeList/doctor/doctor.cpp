@@ -101,7 +101,7 @@ void Doctor::setRecord()
     case 3:
         jobLevel = "Senior Medical Officer";
     }
-    cout << "\nSuccessfully added doctor record." << endl;
+    cout << "\n***Successfully added " << name << "'s record.***" << endl;
 }
 void Doctor::showRecord()
 {

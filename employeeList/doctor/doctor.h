@@ -5,7 +5,7 @@
 #include <string>
 using namespace std;
 
-class Doctor: public Employee
+class Doctor : public Employee
 {
 public:
     string doctorType, specialization, jobLevel;

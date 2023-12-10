@@ -11,20 +11,20 @@ class EmployeeList
 public:
 	TeacherNode *teacherFirstNode;
 	DoctorNode *doctorFirstNode;
-EmployeeList();
+	EmployeeList();
 
-void addTeacher(const Teacher &teacher);
-void addDoctor(const Doctor &doctor);
-void searchEmployeeById();
-void searchEmployeeByName();
-void updateEmployeeRecord();
-void searchYoungestEmployee();
-void searchEldestEmployee();
-void searchDoctorBySpecialization();
-void searchTeacherByTeachingLevel();
-void deleteEmployeeById();
-void deleteEmployeeByName();
-
+	void addTeacher(const Teacher &teacher);
+	void addDoctor(const Doctor &doctor);
+	void showEmployees();
+	void searchEmployeeById();
+	void searchEmployeeByName();
+	void updateEmployeeRecord();
+	void searchYoungestEmployee();
+	void searchEldestEmployee();
+	void searchDoctorBySpecialization();
+	void searchTeacherByTeachingLevel();
+	void deleteEmployeeById();
+	void deleteEmployeeByName();
 };
 
 #endif
